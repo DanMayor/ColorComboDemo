@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{58094AA3-C68B-461B-85AC-2FB38E52954E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75BCD20E-6F8D-491F-993D-2FF7581E8BC0}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ColorComboDemo", "src\ColorComboDemo\ColorComboDemo.xproj", "{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7406DD4-9B7F-4BB6-B5EE-BEEEA0A495E0} = {58094AA3-C68B-461B-85AC-2FB38E52954E}
+	EndGlobalSection
+EndGlobal
