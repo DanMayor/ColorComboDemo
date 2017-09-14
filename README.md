@@ -10,6 +10,8 @@ The input consists of a single line indicating the beginning and ending marker c
 ## Output
 If the combination cannot be achieved by using all of the chips once and only once, then report "Cannot unlock master panel". If the combination can be achieved, then print the chips in the order required to unlock the master control.
 
+----
+
 > # The Solution
 > To solve this problem, I've created a small ASP.Net Core & Angular2 MVC Web Application. Although I most frequently work with ASP.Net Framework MVC web applications (not SPA),  I have chosen this route to demonstrate flexibility in frameworks and design.
 >
