@@ -1,5 +1,10 @@
 ﻿<html>
 <head>
+    <!-- jQuery and Bootstrap from CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Angular Requisites -->
     <script src="/node_modules/core-js/client/shim.min.js"></script>
     <script src="/node_modules/zone.js/dist/zone.js"></script>
     <script src="/node_modules/reflect-metadata/Reflect.js"></script>
@@ -8,10 +13,30 @@
     <script src="/app/systemjs.config.js"></script>
 
     <base href="/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/css/main.css" rel="stylesheet" />
 </head>
 
 <body>
-    <h1>Security Lockout</h1>
-    Coming Soon
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Security System - Master Panel</h1>
+            This system is used to test the available user security chips to determine if they can be arranged
+            in order that will unlock the master panel of your security system.
+        </div>
+    </div>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="well well-md">
+                    <h2>Input String</h2>
+                    <input type="text" id="InputString" />
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
