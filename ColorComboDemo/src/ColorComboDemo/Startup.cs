@@ -19,12 +19,14 @@ namespace ColorComboDemo
         /// <param name="services">The Services collection to register with</param>
         public void ConfigureServices(IServiceCollection services) {
             var builder = services.AddMvc();
+#if DEBUG
             builder.AddMvcOptions(options => {
                 options.CacheProfiles.Add("NoCache", new CacheProfile {
                     NoStore = true,
                     Duration = 0
                 });
             });
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,28 +44,16 @@ namespace ColorComboDemo
                 app.UseDeveloperExceptionPage();
             }
 
-            // Serves as the default action / request handler
-            app.Use(async (context, next) => {
-                await next();
-
-                if (context.Response.StatusCode == 404 && 
-                !Path.HasExtension(context.Request.Path.Value) && 
-                !context.Request.Path.Value.StartsWith("/node_modules/") &&
-                !context.Request.Path.Value.StartsWith("/api/")) {
-
-                    context.Request.Path = "/index.html";
-                    await next();
-                }
-            });
-
-            string libPath = Path.GetFullPath(Path.Combine(env.WebRootPath, @"..\node\modules\"));
+            string libPath = Path.GetFullPath(Path.Combine(env.WebRootPath, @"..\node_modules\"));
+            app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions {
                 FileProvider = new PhysicalFileProvider(libPath),
                 RequestPath = new PathString("/node_modules")
             });
 
-            app.Run(async (context) => {
-                await context.Response.WriteAsync("Hello World!");
+            app.UseMvc(routes => {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}");
+                routes.MapRoute("spa-fallback", "{anything}", new { controller = "Home", action = "Index" });
             });
         }
     }
