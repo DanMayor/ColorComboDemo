@@ -9,8 +9,13 @@ namespace ColorComboDemo
 {
     public class Program
     {
+        /// <summary>
+        ///     Main is the standard application entry point
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
+            // Constructs a standard ASP.NET Core MVC host
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -18,6 +23,7 @@ namespace ColorComboDemo
                 .UseStartup<Startup>()
                 .Build();
 
+            // And execute out webapp!  To the Home Controller
             host.Run();
         }
     }

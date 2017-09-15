@@ -1,4 +1,8 @@
-﻿body {
+﻿/*
+    Some simple styles just to customize the interface a bit
+*/
+
+body {
     font-family: "Segoe UI";
     font-size: 14px;
 }
@@ -13,8 +17,23 @@
     margin: 10px 0 0 0;
 }
 
+.modal-title {
+    margin: 10px 0 5px 10px;
+}
+
+.modal-title .close {
+    margin: -5px 10px 0 0;
+}
+
+.modal-body {
+    border-top: thin gray solid;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
 #OutputStatusMessage {
-    color: maroon;
     font-weight: bold;
     margin: 23px 0 0 0;
 }

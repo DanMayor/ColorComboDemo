@@ -13,6 +13,6 @@ If the combination cannot be achieved by using all of the chips once and only on
 ----
 
 > # The Solution
-> To solve this problem, I've created a small ASP.Net Core & Angular2 MVC Web Application. Although I most frequently work with ASP.Net Framework MVC web applications (not SPA),  I have chosen this route to demonstrate flexibility in frameworks and design.
+> To solve this problem, I've created a small ASP.Net Core MVC Web Application. Although I most frequently work with ASP.Net Framework MVC web applications (not SPA),  I have chosen this route to demonstrate flexibility in frameworks and design.
 >
 > This application is designed to provide a simple user interface allowing the user to test various combinations of security chips to determine if a correct combination can be assembled per the above requirements. In the interest of brevity, documentation is provided within the comments inside the code of this project. Please see the Main method in Program.cs to get started!
