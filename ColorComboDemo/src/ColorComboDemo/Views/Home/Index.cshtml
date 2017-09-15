@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-    <!-- jQuery and Bootstrap from CDN -->
+    @* jQuery and Bootstrap from CDN *@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @* Top Banner (Jumbotron) *@
     <div class="container">
         <div class="jumbotron">
             <h1>Security System - Master Panel</h1>
@@ -16,17 +17,74 @@
             in order that will unlock the master panel of your security system.
         </div>
     </div>
-    <hr />
 
+    @* Main Interface *@
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+
+            @* Input String Editor *@
+            <div class="col-md-6">
                 <div class="well well-md">
                     <h2>Input String</h2>
-                    <input type="text" id="InputString" />
+                    @* In a real scenario I would construct the inputs using Razor html helpers and server side data models *@
+                    <textarea id="InputString" name="InputString"></textarea>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button id="AddChipButton" name="AddChipButton" class="btn btn-success">Add Chip</button>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <button id="ClearStringButton" name="ClearStringButton" class="btn btn-danger">Clear Input String</button>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <button id="ValidateButton" name="ValidateButton" class="btn btn-primary">Validate Input String</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Output String Display *@
+            <div class="col-md-6">
+                <div class="well well-md">
+                    <h2>System Output</h2>
+                    <textarea readonly id="OutputString" name="OutputString"></textarea>
+                    <div id="OutputStatusMessage">
+                        Awaiting Chips...
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="ConfirmClearModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-title">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Are you sure?</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        This will erase the current input string, are you sure?
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <button class="close btn btn-primary" data-dismiss="modal">No, Back to app</button>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div id="ClearStringButton" name="ClearStringButton" class="btn btn-danger">Clear Input String</div>
+                        </div>
+                    </div>
+                </div>
+            </div> @* End Content *@
+        </div> @* End Dialog *@
+    </div> @* End Modal *@
+
 </body>
 </html>
